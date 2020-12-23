@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* Press Start 2P */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+/* Open Sans */
+
+
+/* COLORS CHOSEN FROM https://coolors.co/ and https://www.w3schools.com/colors/colors_picker.asp */
+
+:root {
+    --black: black;
+    --white: white;
+
+    --coffee: #663500;
+    --mocha: #d2a679;
+    --warm-mocha: #F87C00;
+
+    --strawberry: #ff4d4d;
+    --light-strawberry: #FF9999;
+    --deep-strawberry: #2F0000;
+    --dark-strawberry: #180000;
+    --plant: #A6FF4D;
+    --dark-plant: #244700;
+
+
+    --vanilla: #FFAA56;
+    --dark-vanilla: #3E1F00;
+    --light-vanilla: #FFF7EF;
+
+
+    --default-background-color: #ffd9b3;
+    --text-bg: var(--coffee);
+    --text-color: var(--white);
+    --body-background: var(--mocha);
+
+    font-family:'Press Start 2P';
+    /* font-size: 0.5em; */
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* text-align: right; */
+    transition: background 2s, color 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* COMPILATION OF THEMES AND INTERACTIONS */
+    /* DEFAULT STUFF */
+
+.default {
+    background-color: var(--body-background);
+    color: var(--warm-mocha);
+    font-size: 0.5em;
+}
+
+
+.default .vanilla-flavor-text {
+    display:none;
+}
+
+.default .strawberry-flavor-text {
+    display:none;
+}
+
+
+
+
+    /* VANILLA STUFF */
+
+.vanilla-function {
+    transition: 2s;
+
+    background-color: var(--vanilla);
+    color: var(--light-vanilla);
+    --text-bg: var(--dark-vanilla);
+
+
+    font-size: 0.5em;
+    /* font-family: 'Open Sans'; */
+
+}
+
+
+.vanilla-function .robot-speak {
+    display:none;
+}
+
+.vanilla-function .vanilla-flavor-text {
+    display:grid;
+}
+
+.vanilla-function .strawberry-flavor-text {
+    display:none;
+}
+
+
+
+
+
+
+    /* STRAWBERRY STUFF */
+
+.strawberry-function {
+    transition: 2s;
+
+    background-color: var(--light-strawberry);
+    color: var(--light-strawberry);
+    --text-bg: var(--dark-strawberry);
+
+    font-size: 0.5em;
+}
+
+
+.strawberry-function .robot-speak {
+    display:none;
+}
+
+.strawberry-function .vanilla-flavor-text {
+    display:none;
+}
+
+.strawberry-function .strawberry-flavor-text {
+    display:grid;
+}
+
+
+
+
+
+
+
+
+
+
+/* HTML TEXT AREA */
+
+.robot-speak{ 
+    margin-top: 2rem;
+    text-align: right;
+    border: 1rem;
+    border-color: var(--black);
+    position:relative;
+    background-color: var(--text-bg);
+
+    margin-bottom: auto;
+    padding: 0.5rem;
+    line-height: 3;
+    border-radius: 16px;
+}
+
+
+
+.vanilla-flavor-text {
+    transition: 3s;
+    margin-top: 2rem;
+    text-align: right;
+    border: 1rem;
+    border-color: var(--black);
+    position:relative;
+    background-color: var(--text-bg);
+
+    margin-bottom: auto;
+    padding: 0.5rem;
+    line-height: 3;
+    border-radius: 16px;
+}
+
+
+
+.strawberry-flavor-text {
+    transition: 3s;
+    margin-top: 2rem;
+    text-align: right;
+    border: 1rem;
+    border-color: var(--black);
+    position:relative;
+    background-color: var(--text-bg);
+
+    margin-bottom: auto;
+    padding: 0.5rem;
+    line-height: 3;
+    border-radius: 16px; 
+}
+
+
+/* THE FOLLOWING CARD STUFF WAS SOURCED BY FOLLOWING ALONG HERE: https://www.youtube.com/watch?v=29deL9MFfWc& FROM THE BEGINNING UNTIL 5:45*/
+.card-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    /* align-items: left; */
+}
+
+.card-list body {
+    align-items: left;
+}
+
+.card-header p {
+    text-transform: uppercase;
+}
+
+
+.card {
+    display: flex;
+    position: relative;
+    font-size: 2em;
+    height: 6rem;
+    width: 400px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(to bottom, var(--text-bg),var(--black));
+    box-shadow: 0 1rem 0 var(--black);
+    transition: .4s;
+}
+
+
+
+
+
+
+.card:hover {
+    transform: translateX(1rem);
+}
+
+
+.card:hover~.card {
+    transform: translateY(90px);
+}
+/* personal note: the tilde grabs all siblings after the focused element */
+
+.card:not(:first-child) {
+    margin-top: -60px;
+}
+/* personal note: the not psuedo class grabs negation of following */
+
+
+
+/* CARD STUFF ENDS */
+
+
+
+
+
+/* BUTTON STUFF */
+
+button {
+    position: relative;
+    /* display: grid;
+    place-items: center; */
+    cursor: pointer;
+    outline-style: groove;
+    border: 20px;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 0.5rem;
+    color:black;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+    margin-top: 1.0rem;
+}
+
+
+.vanilla-button {
+    color: var(--vanilla);
+    background-color: var(--black);
+    border-color: var(--vanilla);
+}
+
+
+.strawberry-button {
+    color: var(--plant);
+    background-color: var(--strawberry);
+    border-color: var(--plant);
+}
